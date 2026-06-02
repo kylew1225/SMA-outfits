@@ -17,9 +17,9 @@ Live trade execution via the `robinhood-trading` MCP server is authorized for th
 
 These two situations are **time-sensitive** and must bypass the approval wait:
 
-1. **Large profit opportunity**: A high-conviction signal indicates a significant imminent gain (e.g., breakout, momentum surge, arbitrage window). Act first, then immediately message the user with what was executed and why.
+1. **Portfolio double opportunity (≥ 100% gain)**: A signal indicates the trade or position has the potential to double or more the total portfolio value. Execute immediately, then notify the user with what was placed and why.
 
-2. **Large loss risk**: An open position is approaching or breaching a critical stop-loss level, or a sudden adverse move threatens significant capital loss. Close or hedge immediately, then notify the user with full details.
+2. **Portfolio loss threshold (≥ 30% drawdown)**: An open position or adverse market move is on track to reduce total portfolio value by 30% or more. Close or hedge immediately, then notify the user with full details.
 
 **After any urgent execution**, always send a summary that includes:
 - What trade was placed (ticker, action, quantity, price)
